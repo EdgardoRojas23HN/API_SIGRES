@@ -40,7 +40,7 @@ exports.Guardar = async (req, res) => {
             }
         });
 
-        /*//con la validacion no funciona al momento de guardarlo
+        /*//con la validacion no funciona al momento de guardarlo (revisarlo despues)
         if (buscarLogin) {
             msj.mensaje = 'El login ya existe';
         }

@@ -10,7 +10,7 @@ exports.Listar = async (req, res) => {
     try {
         
         const Lista = await modeloEmpleado.findAll({
-            /*//codigo detenido desde aqui
+            /*//codigo comentado por que no funciono la prueba  (revisarlo)
             attributes: ['nombre','apellido'],
             include: [{
                 model: modeloCargo,

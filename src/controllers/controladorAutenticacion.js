@@ -43,7 +43,7 @@ exports.RecuperarContrasena = async(req, res) => {
             const pin = gpc(4);
             console.log(pin);
 
-            /*Se comento porque no funciona con la validacion
+            /*Se comento porque no funciona con la validacion pero si envia correo(revisarlo)
             var buscarUsuario = await Usuario.findOne({
                 where:{
                     
