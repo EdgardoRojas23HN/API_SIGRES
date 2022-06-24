@@ -1,12 +1,12 @@
 const sequelize = require('sequelize');
 const db = new sequelize(
-    'sigres',
-    'root',
-    'Root0417',
+    'sigres', //base
+    'root',  //user
+    'Root0417',  //contraseña
     {
-        host: 'localhost',
-        dialect: 'mysql',
-        port: 3306,
+        host: 'localhost', //directorio
+        dialect: 'mysql', //motor sql
+        port: 3306, //puerto que utiliza mysql
     }
 );
 module.exports = db;
