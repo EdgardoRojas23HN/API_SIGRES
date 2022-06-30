@@ -3,7 +3,7 @@
 *.zip
 .env
 .idea
-.src/components/mensajes.js
+src/components/mensajes.js
 notas.txt
 package-lock.json
 package.json
