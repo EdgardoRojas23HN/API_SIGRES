@@ -4,6 +4,7 @@
 .env
 .idea
 /src/components/mensajes.js
+notas.txt
 .sass-cache/
 /nbproject/
 /nbproject/private/
