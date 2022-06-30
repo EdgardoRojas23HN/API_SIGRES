@@ -3,8 +3,8 @@
 *.zip
 .env
 .idea
-/src/components/mensajes.js
-notas.txt
+.src/components/mensajes.js
+.txt
 .sass-cache/
 /nbproject/
 /nbproject/private/
