@@ -29,27 +29,29 @@ exports.Guardar = async (req, res) => {
     }
     else {
         const { login,empleado,contrasena,accesototal,habilitado,pin,fallidos,correo,estado } = req.body;
-        const buscarLogin = Usuario.findOne({
+        const buscarLogin = await modeloUsuario.findOne({    //Aqui agregamos el await (revisarlo)
             where: {
                 login: login
             }
         });
-        const buscarCorreo = Usuario.findOne({
+        const buscarCorreo = await modeloUsuario.findOne({ //Aqui agregamos el await (revisarlo)
             where: {
                 correo: correo
             }
         });
 
-        /*//con la validacion no funciona al momento de guardarlo (revisarlo despues)
-        if (buscarLogin) {
-            msj.mensaje = 'El login ya existe';
-        }
-        else if(buscarCorreo){
-            msj.mensaje = 'El correo ya existe';
-        }
-        else{*/
+        //con la validacion no funciona al momento de guardarlo (revisarlo despues)
+        if (buscarLogin == login) {
+            msj.mensaje = 'El login ya existe!!';
+            }
+        else if(buscarCorreo == correo){
+            msj.mensaje = 'El correo ya existe!';
+            }
 
-            try {   
+        else{
+
+        try {
+
                 await modeloUsuario.create(
                     {
                         login:login,
@@ -63,16 +65,19 @@ exports.Guardar = async (req, res) => {
                         estado:estado
                     });
                 msj.mensaje = 'Registro almacenado';
-    
-            } catch (error) {
-                msj.mensaje = error;
-                console.log(error)
+           
+        }
+             catch (error) {
+                msj.mensaje = 'Error al guardar los datos';
+                //console.log(error)
+                //msj.mensaje = 'Error al guardar los datos'
             }
-        //}
-
+            
+        }
 
     }
     res.json(msj);
+    
 };
 
 exports.Editar = async(req, res) => {
